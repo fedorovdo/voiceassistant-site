@@ -198,7 +198,7 @@ function App() {
             </a>
           </div>
         </div>
-        <ScreenshotPlaceholder language={language} />
+        <ScreenshotPreview language={language} />
       </section>
 
       <section className="section" id="features">
@@ -300,7 +300,7 @@ function App() {
   )
 }
 
-function ScreenshotPlaceholder({ language }: { language: Language }) {
+function ScreenshotPreview({ language }: { language: Language }) {
   const t = copy[language]
 
   return (
@@ -310,21 +310,26 @@ function ScreenshotPlaceholder({ language }: { language: Language }) {
         <span />
         <span />
       </div>
-      <div className="screenshot-placeholder">
-        <div className="placeholder-panel large" />
-        <div className="placeholder-panel" />
-        <div className="placeholder-lines">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
+
+      <img
+        className="application-screenshot"
+        src="/images/voiceassistant-main.png"
+        alt={
+          language === 'ru'
+            ? 'Главное окно приложения VoiceAssistant'
+            : 'VoiceAssistant application main window'
+        }
+      />
+
       <figcaption>
         <strong>{t.screenshotTitle}</strong>
-        <span>{t.screenshotText}</span>
+        <span>
+          {language === 'ru'
+            ? 'VoiceAssistant в режиме технического помощника.'
+            : 'VoiceAssistant running as a technical discussion helper.'}
+        </span>
       </figcaption>
     </figure>
   )
 }
-
 export default App
