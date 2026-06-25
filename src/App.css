@@ -687,3 +687,13 @@ h3 {
     min-height: 130px;
   }
 }
+
+.application-screenshot {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+  background: #f6f8fb;
+}
